@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 12</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 12:
+            Develop a program to create a class MyThread in this class a constructor, 
+            call the base class constructor, using super and start the thread. 
+            The run method of the class starts after this. It can be observed that
+            both main thread and created child thread are executed concurrently.</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+       
+            class MyThread extends Thread {
+                String name;
+                
+                MyThread(String name) {
+                    super(name);
+                    start();
+                    this.name = name;
+                }
+                
+                public void run() {
+                    int i;
+                    
+                    try {
+                        for(i = 0; i < 5; i++) {
+                            System.out.println(name + ": " + i);
+                            Thread.sleep(1000);
+                        }				
+                    }
+                    catch(InterruptedException e) {
+                        System.out.println("InterruptedException Caught");
+                    }
+                    System.out.println("Child Thread Completed.");
+                }
+                
+            } //End MyThread 
+
+            public class MyThreadDemo {
+
+                public static void main(String[] args) {
+                    
+                    int i;
+                    
+                    new MyThread("Child Thread");	//Child Thread Created
+                    
+                    try {
+                        for(i = 0; i < 5; i++) {
+                            System.out.println("Main Thread : " + i);
+                            Thread.sleep(1000);
+                        }				
+                    }
+                    catch(InterruptedException e) {
+                        System.out.println("InterruptedException Caught");
+                    }	
+                    System.out.println("Main Thread Completed.");
+                } //end main
+            } //end MyThreadDemo
+
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+            /*
+            Output:
+            Main Thread : 0
+            Child Thread: 0
+            Child Thread: 1
+            Main Thread : 1
+            Child Thread: 2
+            Main Thread : 2
+            Child Thread: 3
+            Main Thread : 3
+            Child Thread: 4
+            Main Thread : 4
+            Child Thread Completed.
+            Main Thread Completed.
+            */
+
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
