@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 6</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 6: 
+            Develop a JAVA program to create an abstract class Shape with abstract methods 
+            calculateArea() and calculatePerimeter(). 
+            Create subclasses Circle and Triangle that extend the Shape class and implement
+            the respective methods to calculate the area and perimeter of each shape.</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+            
+                //Abstract class
+                abstract class Shape {
+                    abstract double calculateArea() ;
+                    
+                    abstract double calculatePerimeter();
+                }
+
+                //class Circle
+                class Circle extends Shape {
+                    int r;
+                    
+                    Circle() 		{ r = 10;     }
+                    Circle(int r) 	{ this.r = r; }
+                        
+                    double calculateArea () { 
+                        System.out.println("Cirle class: calculateArea() called.");
+                        return 3.14 * r * r	//pi * r * r
+                    }
+                    
+                    double calculatePerimeter() { 
+                        System.out.println("Cirle class: calculatePerimeter() called.");
+                        return 2 * 3.14 * r;	//2 * pi * r
+                    }
+                }
+
+                //class Triangle
+                class Triangle extends Shape {
+                    int a, b, c;
+                    int p;
+                    
+                    Triangle() 	{ a = b = c = 10;     }
+                    Triangle (int a, int b, int c)  { 
+                        this.a = a; 
+                        this.b = b;
+                        this.c = c;
+                    }
+                    
+                    double calculateArea () { 
+                        System.out.println("Triangle class: calculateArea() called.");
+                        p = a + b + c;		//perimeter
+                        
+                        double s = p/2;		//semi-perimeter = perimeter/2
+                        
+                        //Heron's Formula
+                        double area = Math.sqrt(s * (s-a) * (s-b) * (s-c));
+                        
+                        return area;		
+                    }
+                    
+                    double calculatePerimeter() { 
+                        //Perimeter = sum of all sides (a + b + c)
+                        System.out.println("Triangle class: calculatePerimeter() called.");
+                        return (a + b + c);
+                    }
+                }
+
+                public class AbstractDemo {
+
+                    public static void main(String[] args) {
+                        
+                        Shape s;
+                        
+                        Circle   c = new Circle();
+                        Triangle t = new Triangle();
+
+                        //Circle object
+                        s = c;
+                        System.out.printf("Circle Area      : %5.2f \n\n", s.calculateArea() );
+                        System.out.printf("Circle Perimeter : %5.2f \n\n", s.calculatePerimeter() );
+                        
+                        //Triangle object
+                        s = t;
+                        System.out.printf("Triangle Area      : %5.2f \n\n", s.calculateArea() );
+                        System.out.printf("Triangle Perimeter : %5.2f \n\n", s.calculatePerimeter() );
+
+                    } //end main
+                } //end InhetitanceDemo 
+                /*
+                
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+            Output:
+                Cirle class: calculateArea() called.
+                Circle Area      : 314.00 
+
+                Cirle class: calculatePerimeter() called.
+                Circle Perimeter : 62.80 
+
+                Triangle class: calculateArea() called.
+                Triangle Area      : 43.30 
+
+                Triangle class: calculatePerimeter() called.
+                Triangle Perimeter : 30.00 
+                */
+
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
