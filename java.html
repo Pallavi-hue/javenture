@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javenture - Java Code Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+    <style>
+        body.light-mode {
+            background: #ffffff;
+            color: #000000;
+        }
+        body.dark-mode {
+            background: #121212;
+            color: #ffffff;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle-btn:hover {
+            background: #0056b3;
+        }
+        .lab-btn {
+            display: block;
+            padding: 15px 30px;
+            background: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .lab-btn:hover {
+            background: #0056b3;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            text-align: center; /* Ensures the dropdown button is centered */
+            margin-top: 10px; /* Reduces space between Lab Programs button and the previous buttons */
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #1E90FF;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-menu a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-menu a:hover {
+            background-color: #0056b3;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .header-logo {
+            width: 100%; /* Makes the image span the entire width of the page */
+            max-height: 200px; /* Increased the height of the image */
+            height: auto; /* Maintains the aspect ratio */
+            display: block; /* Ensures the image is displayed as a block element */
+            image-rendering: crisp-edges; /* Ensures sharpness and clarity */
+        }
+        /* Small Button Styles */
+        .nav-btn-container {
+            display: flex;
+            justify-content: center; /* Centers the Home and About Us buttons */
+            gap: 15px; /* Adds space between the buttons */
+            margin-top: 30px; /* Adds space between the welcome section and the buttons */
+        }
+        .nav-btn {
+            padding: 10px 20px;
+            background: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .nav-btn:hover {
+            background: #0056b3;
+        }
+
+        .buttons-container {
+            text-align: center; /* Centers the content */
+            margin-top: 20px; /* Reduced margin space */
+        }
+
+        /* About Us Section */
+        .about-us-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-card {
+            width: 200px;
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-card img {
+            width: 100%;
+            border-radius: 50%;
+            max-width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #1E90FF;
+        }
+
+        .contact-card p {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button class="toggle-btn">Dark Mode</button>
+    
+    <header style="background: linear-gradient(45deg, #1E90FF, #00BFFF); padding: 15px; color: white; text-align: center;">
+        <img src="C:\users\kssem 06\Downloads\Untitled design.png" alt="KSSEM Logo" class="header-logo">
+    </header>
+    
+    <section class="welcome-section" style="text-align: center; padding: 30px; background: #e3f2fd; color: #1E90FF;">
+        <h2>Welcome to Javenture</h2>
+        <p style="font-size: 1.2em; color: #0056b3; font-style: italic;">"Your gateway to mastering Java with beautifully formatted code!"</p>
+    </section>
+
+    <!-- Buttons container with Home, About Us and Lab Programs -->
+    <div class="buttons-container">
+        <!-- Home and About Us buttons -->
+        <div class="nav-btn-container">
+            <button class="nav-btn" onclick="window.location.href='index.html';">Home</button>
+            <button class="nav-btn" onclick="document.getElementById('aboutUsSection').style.display='block';">About Us</button>
+        </div>
+
+        <!-- Lab Programs button below Home and About Us -->
+        <div class="dropdown">
+            <button class="lab-btn">Lab Programs</button>
+            <ul class="dropdown-menu">
+                <li><a href="Program 1.html">Program 1</a></li>
+                <li><a href="Program 2.html">Program 2</a></li>
+                <li><a href="Program 3.html">Program 3</a></li>
+                <li><a href="Program 4.html">Program 4</a></li>
+                <li><a href="Program 5.html">Program 5</a></li>
+                <li><a href="Program 6.html">Program 6</a></li>
+                <li><a href="Program 7.html">Program 7</a></li>
+                <li><a href="Program 8.html">Program 8</a></li>
+                <li><a href="Program 9.html">Program 9</a></li>
+                <li><a href="Program 10.html">Program 10</a></li>
+                <li><a href="Program 11.html">Program 11</a></li>
+                <li><a href="Program 12.html">Program 12</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="aboutUsSection" style="display:none; padding: 40px; background-color: #f4f4f4; text-align: center;">
+        <h2 style="color: #1E90FF;">Meet Our Team</h2>
+        <div class="about-us-container">
+            <!-- Contact 1: B.Vijaya Bharathi -->
+            <div class="contact-card">
+                <img src="C:\users\kssem 06\Downloads\vb.jpeg" alt="B.Vijaya Bharathi">
+                <h3>B.Vijaya Bharathi</h3>
+                <p>USN: 1KG23CB008</p>
+                <p>Phone: 9538841160</p>
+            </div>
+            <!-- Contact 2: Pallavi C -->
+            <div class="contact-card">
+                <img src="C:\users\kssem 06\Downloads\pallavi.jpeg" alt="Pallavi C">
+                <h3>Pallavi.C</h3>
+                <p>USN: 1KG23CB032</p>
+                <p>Phone: 7899198939</p>
+            </div>
+            <!-- Contact 3: Poojashree -->
+            <div class="contact-card">
+                <img src="C:\users\kssem 06\Downloads\pooja.jpeg" alt="Poojashree">
+                <h3>Poojashree</h3>
+                <p>USN: 1KG23CB035</p>
+                <p>Phone: 9380610073</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Dark/Light Mode Toggle
+            const toggleBtn = document.querySelector(".toggle-btn");
+            toggleBtn.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                document.body.classList.toggle("light-mode");
+                toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+            });
+        });
+    </script>
+</body>
+</html>
