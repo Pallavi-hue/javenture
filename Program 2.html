@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 2:Develop a stack class to hold a maximum of 10 integers with suitable methods. 
+            Develop a JAVA main method to illustrate Stack operations. </h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+                */
+
+                import java.util.Scanner; 
+
+                //Stack Class
+                class Stack {
+
+                    int a[]; 
+                    int top; 
+                    int size;
+
+                    Stack() {
+                        size = 3;
+                        top = -1;
+                        a = new int[3];
+                    }
+                    
+                    Stack(int size) { 
+                        this.size = size; 
+                        top = -1;
+                        a = new int[size];
+                    }
+                    
+                    void push(int item) { 
+                        if(top == size-1) {
+                            System.out.println("Stack Overflow.");
+                            return;
+                        }
+                        a[++top] = item;
+                    }
+                    
+                    int pop() {
+                        int item;
+                    
+                        if(top == -1) {
+                            System.out.println("Stack Underflow."); 
+                            return -1;
+                        }
+                        
+                        item = a[top]; 
+                        top--;
+                        
+                        return item;
+                    }
+                    
+                    void display() { 
+                        int i;
+                    
+                        if(top == -1) {
+                            System.out.println("Stack Underflow."); 
+                            return;
+                        }
+                        
+                        System.out.println("Stack: "); 
+                        for(i = 0; i <= top; i++)
+                            System.out.print("	"+a[i]);
+                        
+                        System.out.println("	"); 
+                        return;
+                    }
+                } //end Stack class
+                
+                public class StackDemo {
+
+                    public static void main(String[] args) { 
+                        Scanner scan = new Scanner(System.in); 
+                        
+                        Stack stk = new Stack(10);
+                        int ch; int item;
+                        
+                        for(;;) {
+                            System.out.println("\n1.Push	2.Pop 3.Display 4.Exit"); 
+                            System.out.print("Choice: ");
+                            ch = scan.nextInt();
+                            
+                            switch(ch) {
+                                case 1: System.out.print("Enter item: "); 
+                                        item = scan.nextInt(); 
+                                        stk.push(item);
+                                        break;
+                                
+                                case 2: item = stk.pop();
+                                        if(item != -1)
+                                            System.out.println("Item poped : "+ item);
+                                        break;
+                                        
+                                case 3: stk.display(); 
+                                        break;
+                                
+                                default: System.out.println("Thank You "); 
+                                        scan.close();
+                                        return;
+                            
+                            } //end switch
+                        } //end for
+                        
+                    }	//end main
+                } //end StackDemo
+                /*
+
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+                 Output:
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 2
+                Stack Underflow.
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 3
+                Stack Underflow.
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 10
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 20
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 30
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 40
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 50
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 60
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 70
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 80
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 90
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 100
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 1
+                Enter item: 110
+                Stack Overflow.
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 3
+                Stack: 
+                    10	20	30	40	50	60	70	80	90	100	
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 2
+                Item poped : 100
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 2
+                Item poped : 90
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 3
+                Stack: 
+                    10	20	30	40	50	60	70	80	
+
+                1.Push	2.Pop 3.Display 4.Exit
+                Choice: 4
+                Thank You 
+                */
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
