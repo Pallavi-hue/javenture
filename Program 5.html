@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 5</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 5: 
+            Develop a JAVA program to create a class named shape. Create three sub classes namely: 
+            circle, triangle and square, each class has two member functions named draw () and erase ().
+            
+            Demonstrate polymorphism concepts by developing suitable methods, defining member data and 
+            main program.</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+     
+                package p5;
+
+                class Shape {
+                    void draw() { System.out.println("Shape class: draw called."); }
+                    
+                    void erase() { System.out.println("Shape class: erase called."); }
+                }
+
+                class Circle extends Shape {
+                    
+                    void draw() { System.out.println("Cirle class: draw called."); }
+                    
+                    void erase() { System.out.println("Cirle class: erase called."); }	
+                }
+
+                class Triangle extends Shape {
+
+                    void draw() { System.out.println("Triangle class: draw called."); }
+                    
+                    void erase() { System.out.println("Triangle class: erase called."); }
+                }
+
+                class Square extends Shape {
+
+                    void draw() { System.out.println("Square class: draw called."); }
+                    
+                    void erase() { System.out.println("Square class: erase called."); }
+                }
+
+                public class InheritanceDemo {
+
+                    public static void main(String[] args) {
+                        
+                        Shape s;
+                        
+                        Circle   c = new Circle();
+                        Triangle t = new Triangle();
+                        Square  sq = new Square();
+
+                        //Circle object
+                        s = c;
+                        s.draw();
+                        s.erase();
+                        System.out.println(" ");
+                        
+                        //Triangle object
+                        s = t;
+                        s.draw();
+                        s.erase();
+                        System.out.println(" ");
+                        
+                        //Square object
+                        s = sq;
+                        s.draw();
+                        s.erase();
+                    } //end main
+                } //end InhetitanceDemo
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+            Output:
+        
+            Drawing a circle with radius 5.0
+            Erasing a circle with radius 5.0
+            
+            Drawing a triangle with base 4.0 and height 6.0
+            Erasing a triangle with base 4.0 and height 6.0
+            
+            Drawing a square with side length 3.0
+            Erasing a square with side length 3.0
+            
+
+
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
