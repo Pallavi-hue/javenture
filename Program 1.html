@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 1 -java</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 1:Develop a JAVA program to add TWO matrices of suitable order N (The value of N should be read from
+            command line arguments).</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+
+                */
+
+                import java.util.Scanner;
+
+                public class MatrixAdditionDemo {
+
+                    public static void main(String[] args) {
+
+                        int row1, col1, row2, col2, i, j;
+                        Scanner in = new Scanner(System.in);
+                        
+                        //Read order of matrix 1
+                        System.out.println("Enter order of Matrix 1: ");
+                        System.out.print("Enter number of rows: ");
+                        row1 = in.nextInt();
+                        
+                        System.out.print("Enter number of columns: ");
+                        col1 = in.nextInt();
+                        
+                        //Read order of matrix 2
+                        System.out.println("\nEnter order of Matrix 2: ");
+                        System.out.print("Enter number of rows: ");
+                        row2 = in.nextInt();
+                        
+                        System.out.print("Enter number of columns: ");
+                        col2 = in.nextInt();
+
+                        int mat1[][] = new int[row1][col1];
+                        int mat2[][] = new int[row2][col2];
+                        
+                        //Check matrix addition compatibility
+                        if(row1 != row2 || col1 != col2) {
+                            System.out.println("\nCan't add matrices.");
+                            System.exit(0);
+                        }
+                        
+                        int res[][]  = new int[row1][col1];
+                        
+                        //Read matrix 1
+                        System.out.println("Enter the elements of matrix 1: ");
+                        for ( i = 0 ; i < row1; i++ )
+                            for ( j= 0 ; j < col1 ;j++ )
+                                mat1[i][j] = in.nextInt();
+                                
+                        //Read matrix 2
+                        System.out.println("Enter the elements of matrix 2: ");
+                        for ( i = 0 ; i < row2; i++ )
+                            for ( j= 0 ; j < col2 ;j++ )
+                                mat2[i][j] = in.nextInt();
+                    
+                        //Addition of two matrices
+                        for ( i= 0 ; i < row1 ; i++ )
+                            for ( j= 0 ; j < col1 ;j++ )
+                                res[i][j] = mat1[i][j] + mat2[i][j] ; 
+                        
+                        //Display Result
+                        System.out.println("Sum of matrices:");		 
+                        for ( i= 0 ; i < row1 ; i++ )
+                        { 
+                            for ( j= 0 ; j < col1 ;j++ )
+                                System.out.print(res[i][j]+"\t");
+                            System.out.println();
+                        }		 
+                    } //end main
+                } //end class
+
+
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+                /*
+                Output:
+                Run 1:
+                Enter the number of rows
+                3
+                Enter the number columns
+                3
+                Enter the elements of matrix 1: 
+                1 1 1
+                1 1 1
+                1 1 1
+
+                Enter the elements of matrix 2: 
+                2 2 2
+                2 2 2
+                2 2 2
+
+                Sum of matrices:
+                3	3	3	
+                3	3	3	
+                3	3	3
+
+                Run 2:
+                Enter order of Matrix 1: 
+                Enter number of rows: 2
+                Enter number of columns: 2
+
+                Enter order of Matrix 2: 
+                Enter number of rows: 2
+                Enter number of columns: 3
+
+                Can't add matrices.
+                */
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
+
