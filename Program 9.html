@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 9</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>9. Develop a JAVA program to raise a custom exception (user defined exception) 
+            for DivisionByZero using try, catch, throw and finally.</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+
+import java.util.Scanner;
+
+class CustomException extends Exception {
+
+	public String toString() {
+		return "CustomException: Denominator is Zero";
+	}
+} //end CustomExpection
+
+public class CustomExceptionDemo {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int a, b, c;
+		
+		System.out.printf("Enter a: ");
+		a = scan.nextInt();
+		
+		System.out.printf("Enter b: ");
+		b = scan.nextInt();
+		
+		try {
+			if(b == 0)
+				throw new CustomException();
+			
+			c = a / b;
+			System.out.println("c = "+c);
+		}
+		catch (CustomException e) {
+			b = 1;
+			c = a / b;
+			System.out.println("DivideByZero Exception caught and handled:  ");
+			System.out.println("c = " + c);
+			//System.out.printf("%s",e);
+		}
+		finally {
+			System.out.println("Finally block.");
+		}
+	} //end main
+} //end ExceptionDemo
+
+
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+               /*
+                Output:
+                Run 1:
+                Enter a: 10
+                Enter b: 2
+                c = 5
+                Finally block.
+
+                Run 2:
+                Enter a: 3
+                Enter b: 0
+                DivideByZero Exception caught and handled:  
+                c = 3
+                Finally block.
+                */
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
