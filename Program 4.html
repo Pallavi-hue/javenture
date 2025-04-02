@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 4</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 4:
+            A class called MyPoint, which models a 2D point with x and y coordinates, is designed as follows:
+            a. Two instance variables x (int) and y (int).
+            b. A default (or "no-arg") constructor that construct a point at the default location of (0, 0).
+            c. A overloaded constructor that constructs a point with the given x and y coordinates.
+            d. A method setXY() to set both x and y.
+            e. A method getXY() which returns the x and y in a 2-element int array.
+            f. A toString() method that returns a string description of the instance in the format "(x, y)".
+            g. A method called distance(int x, int y) that returns the distance from this point to another point at the
+            given (x, y) coordinates
+            h. An overloaded distance(MyPoint another) that returns the distance from this point to the given
+            MyPoint instance (called another)
+            i. Another overloaded distance() method that returns the distance from this point to the origin (0,0)
+            Develop the code for the class MyPoint.
+            
+            Also develop a JAVA program (called TestMyPoint) to test all the methods defined in the class.
+            </h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+                class MyPoint{
+                    int x, y;
+                    
+                    //Zero argument constructor
+                    MyPoint () {
+                        x = y = 0;
+                    }
+                    
+                    //Parameterized constructor
+                    MyPoint (int x, int y) {
+                        this.x = x;
+                        this.y = y;
+                    }
+                    
+                    //Set x and y
+                    void setXY (int x, int y) {
+                        this.x = x;
+                        this.y = y;
+                    }
+                    
+                    //Return x and y as an array
+                    int[] getXY () {
+                        int p[] = new int[2];
+                        p[0] = x;
+                        p[1] = y;
+                        return p;
+                    }
+                    
+                    //Display point in format (x,y)
+                    public String toString() {
+                        return "(" +x+ ", " +y+ ")";
+                    }
+
+                    //Calculate distance between two points
+                    double distance(int x2, int y2) {
+                        double d;
+                        
+                        d = Math.sqrt(Math.pow((x2-x),2) + Math.pow((y2-y),2) );
+                        return d;
+                    }
+                    
+                    double distance(MyPoint p) {
+                        double d;
+
+                        d = Math.sqrt(Math.pow((p.x-x),2) + Math.pow((p.y-y),2) );
+                        return d;
+                    }
+                    
+                    double distance() {
+                        double d;
+
+                        d = Math.sqrt(Math.pow((x-0),2) + Math.pow((y-0),2) );
+                        //d = Math.sqrt(Math.pow((x),2) + Math.pow((y),2) );
+                        return d;
+                    }
+                    
+                } //end class Point
+
+                public class TestMyPoint {
+
+                    public static void main(String[] args) {
+
+                        MyPoint p1 = new MyPoint();			//using default constructor
+                        MyPoint p2 = new MyPoint();			//using default constructor
+                        MyPoint p3 = new MyPoint(2,3);		//using parameterized constructor
+                        
+                        int [] pa1, pa2, pa3;				//point array
+                        double dist; 
+                        
+                        p2.setXY(2, 4);						//using setxy()
+                        
+                        //1. Find distance between two points
+                        dist = p2.distance(1, 2);
+                        
+                        pa2 = p2.getXY();					//using getXY()
+                        System.out.printf("1. Distance between (%d, %d) to (1, 2): %5.2f \n", pa2[0], pa2[1], dist);
+                        
+                        //2. Find distance between current point and other point object
+                        dist = p2.distance(p3);
+                        
+                        pa2 = p2.getXY();
+                        pa3 = p3.getXY();
+                        System.out.printf("2. Distance between (%d, %d) to (%d, %d): %5.2f \n", pa2[0], pa2[1], pa3[0], pa3[1], dist);
+                        
+                        //3. Find distance between current point and origin
+                        dist = p2.distance();
+                        
+                        System.out.print("3. Distance between "+ p2 +" to "+ p1 + ": ");
+                        System.out.printf("%5.2f \n", dist);
+
+                    } //end main
+                } //end class PointDemo
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+            /*
+            Output:
+            1. Distance between (2, 4) to (1, 2):  2.24 
+            2. Distance between (2, 4) to (2, 3):  1.00 
+            3. Distance between (2, 4) to (0, 0):  4.47  
+            */
+
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
