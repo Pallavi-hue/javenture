@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 3</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 3: A class called Employee, which models an employee with an ID, 
+            name and salary, is designed as shown in the following class 
+            diagram. The method raiseSalary (percent) increases the salary 
+            by the given percentage. 
+            Develop the Employee class and suitable main method for 
+            demonstration..</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+
+            /*
+ 
+            import java.util.Scanner;
+
+            class Employee {
+                String ID;
+                String name;
+                double salary;
+                
+                void read(Scanner scan) {
+                    System.out.print("ID    : ");
+                    ID = scan.next();
+                    
+                    System.out.print("Name  : ");
+                    name = scan.next();
+                    
+                    System.out.print("Salary: ");
+                    salary = scan.nextDouble();
+                }
+                
+                double raiseSalary(double p) {
+                        
+                    salary += salary * p;
+                    return salary;
+                } //End raiseSalary	
+
+                public void display() {
+                    System.out.printf("%5s %10s %10.2f \n",ID, name, salary);
+                }
+                
+            } //End Employee
+
+            public class EmployeeDemo {
+                public static void main(String[] args) {
+
+                    int i, j;		
+                    
+                    Scanner scan = new Scanner(System.in); 
+                    
+                    System.out.print("Enter number of employees: ");
+                    int n = scan.nextInt();
+                    Employee emp[] = new Employee[n];
+                    
+                    //Read Employee details
+                    System.out.print("Enter employee details: ");
+                    for(i = 0; i < n; i++) {
+                        System.out.println("\nEmployee "+ (i+1) +": ");
+                        
+                        emp[i] = new Employee();
+                        emp[i].read(scan);
+                    }
+                    
+                    //Display Employee details before Salary Raise
+                    System.out.println("\nEmployee details(before Salary Raise): ");
+                    System.out.printf("%5s %10s %10s \n","ID","Name","Salary");
+                    for(i = 0; i < n; i++) {
+                        emp[i].display();
+                    }
+                    
+                    //Employee Salary Raise
+                    System.out.println("\nEmployee Salary Raise(%): ");
+                    for(i = 0; i < n; i++) {
+                        System.out.print("Employee "+ (i+1) +": ");			
+                        
+                        double raise = scan.nextDouble();
+                        emp[i].raiseSalary(raise/100);
+                    }
+                    
+                    //Display Employee details (after Salary Raise)
+                    System.out.println("\nEmployee details(after Salary Raise): ");
+                    System.out.printf("%5s %10s %10s \n","ID","Name","Salary");
+                    for(i = 0; i < n; i++) {
+                        emp[i].display();
+                    }
+                } //End main
+            } // End EmployeeDemo
+
+            /*
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+            Output:
+                Enter number of employees: 3
+                Enter employee details: 
+                Employee 1: 
+                ID    : 100
+                Name  : Person1
+                Salary: 100000
+
+                Employee 2: 
+                ID    : 101
+                Name  : Person2
+                Salary: 150000
+
+                Employee 3: 
+                ID    : 102
+                Name  : Person3
+                Salary: 200000
+
+                Employee details(before Salary Raise): 
+                ID       Name     Salary 
+                100    Person1  100000.00 
+                101    Person2  150000.00 
+                102    Person3  200000.00 
+
+                Employee Salary Raise(%): 
+                Employee 1: 10
+                Employee 2: 15
+                Employee 3: 20
+
+                Employee details(after Salary Raise): 
+                ID       Name     Salary 
+                100    Person1  110000.00 
+                101    Person2  172500.00 
+                102    Person3  240000.00 
+                */
+
+
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
