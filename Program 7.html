@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #ddd);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program 7:
+            Develop a JAVA program to create an interface Resizable with methods 
+            resizeWidth(int width) and resizeHeight(int height) that allow an object
+            to be resized. 
+            Create a class Rectangle that implements the Resizable interface and 
+            implements the resize methods.</h1>
+        <p><strong>Description:</strong> This program demonstrates a basic implementation of an array traversal.</p>
+        
+        <h2>Code:</h2>
+        <pre>
+            
+
+            interface Resizable {
+                void resizeWidth(int width);
+                void resizeHeight(int height); 
+            }
+
+            class Rectangle implements Resizable  {
+                int width, height; 
+                
+                Rectangle() {
+                    width = height = 5;
+                }
+                
+                Rectangle(int width, int height) {
+                    this.width = width;
+                    this.height = height;
+                }
+                
+                public void resizeWidth(int width) {
+                    this.width = width;
+                }
+
+                public void resizeHeight(int height) {
+                    this.height = height;
+                }
+                
+            public String toString() {
+                    String s = "Rectangle(width,height): (" +width+ "," +height+ ") \n";
+                    s += "Area: "+(width * height);
+                    return s; 
+                }
+                    
+            }
+
+            public class InterfaceDemo {
+                public static void main(String args[]) {
+                    Rectangle r1 = new Rectangle(2,4);
+                    Resizable r;
+                    
+                    r = r1;
+                    System.out.println(r);
+                    
+                    r.resizeWidth(10);
+                    r.resizeHeight(10);
+                    
+                    System.out.println(r);
+                            
+                } //end main
+            } //end class
+
+
+
+ </pre>
+        
+        <h2>Output:</h2>
+        <pre>
+            /*
+                Output:
+                Rectangle(width,height): (2,4) 
+                Area: 8
+                Rectangle(width,height): (10,10) 
+                Area: 100
+                */
+
+
+
+
+ </pre>
+        
+        <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+    </div>
+</body>
+</html>
